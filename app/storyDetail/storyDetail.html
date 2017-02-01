@@ -1,0 +1,94 @@
+<div>
+    <nav class="navbar navbar-inverse navbar-color">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="/#/main"><img alt="StuckyToys" src="./resources/images/logo.png" class="logo" /></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/#/stories">Mijn verhalen</a></li>
+                <li><a href="/#/widgets">Mijn widgets</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a>Welkom {{vm.username}}</a>
+                </li>
+                <li>
+                    <a ng-click="vm.logOut()">
+                        <span class="glyphicon glyphicon-log-out"></span> Log uit
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 scenes">
+                <h4>Scenes</h4>
+                <div ng-repeat="scene in vm.story.scenes"
+                    class="scene"
+                    ng-click="vm.selectScene(scene)"
+                    ng-class="{activeScene : vm.activeScene === scene}">
+                  <p class="sceneNr">
+                    {{scene.sceneNr}}
+                  </p>
+                  <div class="preview">
+                    <div class="preview-text">
+                      <p>{{scene.text}}</p>
+                    </div>
+                    <div class="preview-widgets">
+                      <img
+                        ng-repeat="widget in scene.widgets"
+                        src="http://188.166.173.147:3000/downloads/Afbeelding/{{vm.getImageFileName(widget)}}"
+                      />
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <input type="text" ng-model="vm.story.name" ng-disabled="!vm.editMode" class="form-control" />
+                <p>Gecreëerd op {{vm.niceDate}}</p>
+                <div ng-show="vm.activeScene">
+                    <label>Tekst</label>
+                    <textarea
+                      ng-disabled="!vm.editMode"
+                      class="form-control"
+                      ng-model="vm.activeScene.text">
+                    </textarea>
+                    <label>Widgets</label>
+                    <div ng-repeat="widget in vm.activeScene.widgets">
+                        <div class="widget">
+                            <a href="/#/widget/{{widget._id}}">{{widget.id}}</a>
+                            <div ng-show="vm.getTypeOfWidget(widget) === 'Geluid'">
+                              <img class="show-widget"
+                                alt="play"
+                                src="http://188.166.173.147:3000/downloads/Afbeelding/{{vm.getImageFileName(widget)}}" />
+                            </div>
+                            <div ng-show="vm.getTypeOfWidget(widget) === 'spel'"></div>
+                            <div ng-show="vm.getTypeOfWidget(widget) === 'Afbeelding'">
+                              <img class="show-widget"
+                                alt="afbeelding"
+                                src="http://188.166.173.147:3000/downloads/Afbeelding/{{vm.getImageFileName(widget)}}" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div ng-show="vm.activeScene.hints && vm.activeScene.hints.length > 0">
+                  <label>Hints</label>
+                  <textarea
+                    class="form-control"
+                    ng-repeat="hint in vm.activeScene.hints"
+                    ng-disabled="!vm.editMode">{{hint}}</textarea>
+                </div>
+            </div>
+            <div class="col-md-3 theme">
+                <h4>Thema's</h4>
+                <div ng-repeat="theme in vm.story.themes">
+                    <p>{{theme.name}}</p>
+                    <textarea ng-disabled="!vm.editMode" class="form-control" ng-model="theme.description">
+              </textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

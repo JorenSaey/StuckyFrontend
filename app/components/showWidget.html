@@ -1,0 +1,12 @@
+<div>
+  <label>Widgets</label>
+  <div ng-repeat="widget in vm.activeScene.widgets">
+    <img
+      class="show-widget"
+      src="http://188.166.173.147:3000/downloads/Afbeelding/{{vm.getImageFileName(widget)}}"
+      alt="widget"/>
+    <span class="remove-button" ng-click="vm.removeWidget(widget)">
+      <img alt="remove" src="./resources/images/removebutton.png" />
+    </span>
+  </div>
+</div>

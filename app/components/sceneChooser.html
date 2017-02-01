@@ -1,0 +1,28 @@
+<div>
+  <h4>Scenes</h4>
+  <div ng-repeat="scene in vm.activeStory.scenes"
+      class="scene"
+      ng-click="vm.selectScene(scene)"
+      ng-class="{activeScene : vm.activeScene === scene}">
+    <p class="sceneNr">
+      {{scene.sceneNr}}
+      <span
+        class="remove-button pull-right"
+        ng-click="vm.removeScene(scene)">
+        <img alt="remove" src="./resources/images/removebutton.png" />
+      </span>
+    </p>
+    <div class="preview">
+      <div class="preview-text">
+        <p>{{scene.text}}</p>
+      </div>
+      <div class="preview-widgets">
+        <img
+          ng-repeat="widget in scene.widgets"
+          src="http://188.166.173.147:3000/downloads/Afbeelding/{{vm.getImageFileName(widget)}}"
+        />
+      </div>
+    </div>
+  </div>
+  <button ng-click="vm.addScene()" class="btn btn-default">+ Scene</button>
+</div>

@@ -1,0 +1,237 @@
+.navbar-color{
+  background-color: #b6cd02;
+  border-color: #4D394B;
+  border-radius: none;
+}
+.navbar-inverse .navbar-nav>li:hover>a {
+  color: black;
+}
+.navbar-inverse .navbar-nav>li>a {
+  color: #4D394B;
+}
+.form-control:focus {
+  border-color: #4D394B;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #4D394B;
+}
+.btn:focus,.btn:active {
+   outline: none !important;
+}
+td a{
+  color: #b6cd02;
+}
+td a:hover{
+  color: #4D394B;
+}
+nav ul li a{
+  cursor: pointer;
+}
+.banner{
+  width: inherit;
+  margin-top: 20px;
+}
+.logo{
+  width : 200px;
+  margin-top: 5px;
+}
+.background{
+  width: 140%;
+  padding-left: 20%;
+  padding-right: 20%;
+  height: 500px;
+  background-image: url('../resources/images/background.png');
+  background-repeat: no-repeat;
+}
+.error{
+  color: red;
+}
+
+.tile{
+  text-align: center;
+  border-radius: 5px;
+  border: 3px solid #4D394B;
+  font-size: 14px;
+  display: inline-block;
+  margin-bottom: 8px;
+  width: calc(50% - 4px);
+  margin-right: 8px;
+}
+
+.tile p{
+  text-align: center;
+  color: #4D394B;
+  width:100%;
+}
+.tile img{
+  width: 200px;
+  height: 200px;
+}
+
+.tile:hover{
+  border: 3px solid #b6cd02;
+  cursor: pointer;
+}
+
+.tile:hover p{
+  color: #b6cd02;
+}
+
+.tile:nth-of-type(2n) {
+  margin-right: 0;
+}
+
+.logout{
+  float: right;
+}
+.scene {
+  border: 2px solid #b6cd02;;
+  height: 100px;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.activeScene {
+  border: 5px solid #4D394B;
+}
+.preview{
+  width: inherit;
+  height: inherit;
+}
+.preview-text{
+  font-size: 8px;
+  color: grey;
+}
+.preview-widgets img{
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+.make-story-selection {
+  margin-top: 5px;
+}
+.save-story{
+  margin-top: 5px;
+}
+.widget-form input{
+  margin-top: 5px;
+}
+.playsound {
+  width: 50px;
+  height: 50px;
+}
+.dropzone{
+  width: inherit;
+  height: 300px;
+  border: 1px dashed black;
+  padding: 5px;
+  margin-left: 5px;
+}
+.story-dropzone{
+  width: 150;
+  height: 150;
+  border: 1px dashed black;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+.sound-dropzone{
+  width: inherit;
+  height: 300px;
+  border: 1px dashed black;
+  padding: 5px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+.picture{
+  width: inherit;
+  height: 250px;
+}
+.story-picture{
+  width: 145px;
+  height: 145px;
+}
+.show-widget{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+}
+.remove-button{
+  cursor: pointer;
+  margin-left: 5px;
+}
+.remove-button img{
+  width: 25px;
+  height: 25px;
+}
+.hint{
+  width: 200px;
+  height: 50px;
+}
+.hint-button{
+  margin-top: 5px;
+}
+form input{
+  margin: 5px;
+}
+table img {
+  width: 100px;
+  height: 100px;
+}
+textarea {
+  margin-top: 5px;
+}
+.story-name {
+  margin-bottom: 5px;
+}
+.filter-name{
+  width: 150px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+.filter-duration{
+  width: 200px;
+  margin-bottom: 5px;
+}
+.filter-theme{
+  width: 150px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+.themeChooser{
+  margin-top: 5px;
+}
+.themeOptions button{
+  margin-top: 5px;
+}
+.selection-style-class{
+  margin-top: 5px;
+}
+@media screen and (min-width: 50em) {
+  .tile {
+    width: calc(25% - 6px);
+  }
+
+  .tile:nth-of-type(2n) {
+    margin-right: 8px;
+  }
+
+  .tile:nth-of-type(4n) {
+    margin-right: 0;
+  }
+}
+
+/*Markup for individual components*/
+.scene-chooser{
+  margin-top: 50px;
+  padding-right: 5px;
+  border-right: 1px solid grey;
+}
+.theme-chooser{
+  margin-top: 55px;
+  padding-left: 5px;
+  border-left: 1px solid grey;
+}
+.story-creator{
+}
